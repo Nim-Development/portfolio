@@ -1,0 +1,36 @@
+[x] add profile pic
+[x] add project titles
+[x] add project bodies
+[x] add project links (to SpeedDial)
+[x] add images to single project
+[x] remove item from sidenav
+[] make sidenav highlights
+[] add text to about
+[] add links to about
+[] add contact info to about
+[] fix github buttons
+[] Bottom spacing
+[] Add live link to projects SPA
+
+[] Deploy package (Properly!)
+
+
+A result oriented Laravel developer with +2 years experience in 
+developing and maintaining web applications.
+I am self taught and became advanced by working in a dev team
+and by developing 5+ projects as a freelancer.
+
+Besides the obvious, my motivation for working in a dev team 
+is to learn new skills and advance myself to the next level.
+
+I love laravel because it is a robust and complete framework. By investing lots of hours in this framework I became fast at writing 
+laravel applications and I gained a deeper understanding of its underlying 
+processes (like the service container).
+I am also comfortable at laravel package development.
+
+Recently VueJs caught my interest, I completed a few basic 
+applications and I am comfortable with its fundamentals.
+
+My major goals for the next years are:
+- Working in a professional dev team
+- Becoming fluent at the Laravel/VueJs stack
