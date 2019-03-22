@@ -39,7 +39,7 @@
                                         <v-icon>{{ card.show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
                                     </v-btn>
                                     <v-fade-transition>
-                                        <div class="headline ml-2">{{ card.title }}</div>
+                                        <div class="headline ml-2" @click="card.show = !card.show">{{ card.title }}</div>
                                     </v-fade-transition>
                                     
                                     <v-spacer></v-spacer>

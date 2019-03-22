@@ -4,16 +4,23 @@
 [x] add project links (to SpeedDial)
 [x] add images to single project
 [x] remove item from sidenav
-[] make sidenav highlights
 [] add text to about
 [] add links to about
 [] add contact info to about
-[] fix github buttons
-[] Bottom spacing
+[x] fix github buttons
 [] Add live link to projects SPA
+
+[] Bottom spacing
+[] make sidenav highlights
+
+[x] REDUCE single project xs image height 
+
+[x] fix mobile behavior
 
 [] Deploy package (Properly!)
 
+
+[] Style.. Later!
 
 A result oriented Laravel developer with +2 years experience in 
 developing and maintaining web applications.

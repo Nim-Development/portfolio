@@ -11,7 +11,7 @@
                     <v-icon large dark>keyboard_arrow_left</v-icon>
                 </v-btn>
                 <v-layout row wrap class="mt-1">
-                    <v-flex class="xs12 sm12 lg12" >
+                    <v-flex class="xs12 sm12 lg10 offset-lg1" >
                         
                     
                         <v-card>
@@ -19,10 +19,11 @@
                             :src="`/storage/img/projects/${project.src}`"
                             aspect-ratio="2.75"
                             ></v-img> -->
-                            <v-carousel hide-delimiters>
+                            <v-carousel hide-delimiters height="100%">
                                 <v-carousel-item
                                 v-for="(item,i) in project.src"
                                 :key="i"
+                                
                                 :src="`/storage/img/projects/${item}`"
                                 ></v-carousel-item>
                             </v-carousel>
@@ -254,7 +255,6 @@ export default {
                     return 'display-2';
                     break;
             }
-
         }
     }
 }

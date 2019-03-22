@@ -2666,6 +2666,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Project',
@@ -21359,7 +21360,14 @@ var render = function() {
                                         _c("v-fade-transition", [
                                           _c(
                                             "div",
-                                            { staticClass: "headline ml-2" },
+                                            {
+                                              staticClass: "headline ml-2",
+                                              on: {
+                                                click: function($event) {
+                                                  card.show = !card.show
+                                                }
+                                              }
+                                            },
                                             [_vm._v(_vm._s(card.title))]
                                           )
                                         ]),
@@ -21572,14 +21580,16 @@ var render = function() {
                 [
                   _c(
                     "v-flex",
-                    { staticClass: "xs12 sm12 lg12" },
+                    { staticClass: "xs12 sm12 lg10 offset-lg1" },
                     [
                       _c(
                         "v-card",
                         [
                           _c(
                             "v-carousel",
-                            { attrs: { "hide-delimiters": "" } },
+                            {
+                              attrs: { "hide-delimiters": "", height: "100%" }
+                            },
                             _vm._l(_vm.project.src, function(item, i) {
                               return _c("v-carousel-item", {
                                 key: i,
