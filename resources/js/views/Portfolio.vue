@@ -17,9 +17,10 @@
                                 slot-scope="{ hover }"
                                 :class="hover ? 'elevation-12' : 'elevation-3'"
                                 color="grey lighten-4"
-                                @click="card.show = !card.show"
+                                
                             >
                                 <v-img
+                                @click="card.show = !card.show"
                                 :src="`/storage/img/projects/${card.src}`"
                                 :height="card.height"
                                 :gradient="hover ? '' : gradient"

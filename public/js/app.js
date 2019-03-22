@@ -2423,6 +2423,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Portfolio',
@@ -21289,12 +21290,7 @@ var render = function() {
                                     class: hover
                                       ? "elevation-12"
                                       : "elevation-3",
-                                    attrs: { color: "grey lighten-4" },
-                                    on: {
-                                      click: function($event) {
-                                        card.show = !card.show
-                                      }
-                                    }
+                                    attrs: { color: "grey lighten-4" }
                                   },
                                   [
                                     _c(
@@ -21305,6 +21301,11 @@ var render = function() {
                                             "/storage/img/projects/" + card.src,
                                           height: card.height,
                                           gradient: hover ? "" : _vm.gradient
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            card.show = !card.show
+                                          }
                                         }
                                       },
                                       [
