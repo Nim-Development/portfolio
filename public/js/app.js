@@ -2113,6 +2113,15 @@ __webpack_require__.r(__webpack_exports__);
         default:
           return true;
       }
+    },
+    speed_dial_hover: function speed_dial_hover() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return false;
+
+        default:
+          return true;
+      }
     }
   }
 });
@@ -20771,7 +20780,7 @@ var render = function() {
         "v-speed-dial",
         {
           attrs: {
-            "open-on-hover": "",
+            "open-on-hover": _vm.speed_dial_hover,
             direction: "top",
             transition: "slide-y-reverse-transition"
           },
@@ -21325,7 +21334,14 @@ var render = function() {
                                       [
                                         _c(
                                           "v-btn",
-                                          { attrs: { flat: "", icon: "" } },
+                                          {
+                                            attrs: { flat: "", icon: "" },
+                                            on: {
+                                              click: function($event) {
+                                                card.show = !card.show
+                                              }
+                                            }
+                                          },
                                           [
                                             _c("v-icon", [
                                               _vm._v(

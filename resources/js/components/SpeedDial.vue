@@ -1,7 +1,7 @@
 <template>
     <div class="speeddial">
         <v-speed-dial
-            open-on-hover
+            :open-on-hover="speed_dial_hover"
             v-model="fab"
             direction="top"
             transition="slide-y-reverse-transition"
@@ -72,6 +72,12 @@ export default {
         tooltip_show() {
             switch (this.$vuetify.breakpoint.name) {
                 case 'xs': return true;
+                default: return true;
+            }
+        },
+        speed_dial_hover() {
+            switch (this.$vuetify.breakpoint.name) {
+                case 'xs': return false;
                 default: return true;
             }
         }

@@ -35,7 +35,7 @@
                                 </v-img>
 
                                 <v-card-actions >
-                                    <v-btn flat icon>
+                                    <v-btn flat icon @click="card.show = !card.show">
                                         <v-icon>{{ card.show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
                                     </v-btn>
                                     <v-fade-transition>
