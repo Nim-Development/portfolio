@@ -4,7 +4,7 @@
             <v-container
                 fluid
                 grid-list-md
-                class="mt-4"
+                class="mt-4 mb-4"
                 >
                 <v-layout row wrap :class="mx_size">
                     <v-flex
@@ -87,6 +87,7 @@
                     </v-flex>
                 </v-layout>
             </v-container>
+            
         </v-layout>
     </div>
 </template>

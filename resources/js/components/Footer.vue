@@ -5,7 +5,8 @@
         :active.sync="bottomNav"
         :value="true"
         dark
-        color="blue-grey darken-2"
+        class="grey darken-2"
+        
         >
 
         <v-btn 

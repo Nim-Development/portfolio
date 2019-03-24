@@ -1838,6 +1838,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Footer',
   data: function data() {
@@ -2342,6 +2343,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SpeedDial_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/SpeedDial.vue */ "./resources/js/components/SpeedDial.vue");
+//
 //
 //
 //
@@ -20489,13 +20491,8 @@ var render = function() {
       _c(
         "v-bottom-nav",
         {
-          attrs: {
-            fixed: "",
-            active: _vm.bottomNav,
-            value: true,
-            dark: "",
-            color: "blue-grey darken-2"
-          },
+          staticClass: "grey darken-2",
+          attrs: { fixed: "", active: _vm.bottomNav, value: true, dark: "" },
           on: {
             "update:active": function($event) {
               _vm.bottomNav = $event
@@ -21284,7 +21281,10 @@ var render = function() {
         [
           _c(
             "v-container",
-            { staticClass: "mt-4", attrs: { fluid: "", "grid-list-md": "" } },
+            {
+              staticClass: "mt-4 mb-4",
+              attrs: { fluid: "", "grid-list-md": "" }
+            },
             [
               _c(
                 "v-layout",
