@@ -1837,6 +1837,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Footer',
   data: function data() {
@@ -2448,7 +2449,7 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Food E-Commerce Website',
         src: 'petit-pain/petit-pain1.png',
         flex: 'xs12 sm12 md12 lg12',
-        mini_desc: 'Petit Pain is a busy food company who was looking for ways to expand their business. I was hired to create an webpage on which their customers can easily place orders.',
+        desc: 'Petit Pain is a busy food company who was looking for ways to expand their business. I was hired to create an webpage on which their customers can easily place orders.',
         height: '300px',
         show: false,
         links: [{
@@ -20488,7 +20489,13 @@ var render = function() {
       _c(
         "v-bottom-nav",
         {
-          attrs: { fixed: "", active: _vm.bottomNav, value: true },
+          attrs: {
+            fixed: "",
+            active: _vm.bottomNav,
+            value: true,
+            dark: "",
+            color: "blue-grey darken-2"
+          },
           on: {
             "update:active": function($event) {
               _vm.bottomNav = $event
@@ -20501,7 +20508,7 @@ var render = function() {
             {
               key: index,
               attrs: {
-                color: "teal",
+                color: "white",
                 flat: "",
                 value: link.name,
                 router: "",

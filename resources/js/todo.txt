@@ -10,15 +10,14 @@
 [x] fix github buttons
 [] Add live link to projects SPA
 
-[] Bottom spacing
-[] make sidenav highlights
-
 [x] REDUCE single project xs image height 
 
 [x] fix mobile behavior
 
 [] Deploy package (Properly!)
-
+[] Bottom spacing
+[] make sidenav highlights
+[] footer color xs toolbar color xs
 
 [] Style.. Later!
 

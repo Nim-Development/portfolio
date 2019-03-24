@@ -4,13 +4,14 @@
         fixed
         :active.sync="bottomNav"
         :value="true"
-        
+        dark
+        color="blue-grey darken-2"
         >
 
         <v-btn 
             v-for="(link, index) in links"
             :key="index"
-            color="teal"
+            color="white"
             flat
             :value="link.name"
             router :to="link.route"

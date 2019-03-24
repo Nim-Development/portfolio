@@ -107,7 +107,7 @@ export default {
                     title: 'Food E-Commerce Website',
                     src: 'petit-pain/petit-pain1.png',
                     flex: 'xs12 sm12 md12 lg12',
-                    mini_desc: 'Petit Pain is a busy food company who was looking for ways to expand their business. I was hired to create an webpage on which their customers can easily place orders.',
+                    desc: 'Petit Pain is a busy food company who was looking for ways to expand their business. I was hired to create an webpage on which their customers can easily place orders.',
                     height:'300px',
                     show: false,
                     links: [

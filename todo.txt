@@ -1,0 +1,6 @@
+// MAKE A SPA ADMIN PANEL
+
+[] > List Projects
+   > Update Projects
+[] > Store settings
+[] > 
