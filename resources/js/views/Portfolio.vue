@@ -4,7 +4,7 @@
             <v-container
                 fluid
                 grid-list-md
-                class="mt-4 mb-4"
+                class="mt-4 mb-5"
                 >
                 <v-layout row wrap :class="mx_size">
                     <v-flex
@@ -21,7 +21,7 @@
                             >
                                 <v-img
                                 @click="card.show = !card.show"
-                                :src="`/storage/img/projects/${card.src}`"
+                                :src="`${api_base}${card.src}`"
                                 :height="card.height"
                                 :gradient="hover ? '' : gradient"
                                 >
@@ -93,6 +93,7 @@
 </template>
 <script>
 import SpeedDial from "../components/SpeedDial.vue";
+import axios from "axios";
 export default {
     name: 'Portfolio',
     components: {
@@ -101,134 +102,136 @@ export default {
     data() {
         return {
             show: false,
+            api_base: 'project6.nimdevelopment.com/',
             gradient: 'to bottom right, rgba(250, 250, 250, .1), rgba(85,85,85,0.0)',
-            projects: [
-                {
-                    id: 0,
-                    title: 'Food E-Commerce Website',
-                    src: 'petit-pain/petit-pain1.png',
-                    flex: 'xs12 sm12 md12 lg12',
-                    desc: 'Petit Pain is a busy food company who was looking for ways to expand their business. I was hired to create an webpage on which their customers can easily place orders.',
-                    height:'300px',
-                    show: false,
-                    links: [
-                         {
-                            link: "winkel.petitpain.nl",
-                            tooltip: "View live project",
-                            color: "red mb-1",
-                            icon: "web"
-                        }
-                    ]
-                },
-                {
-                    id: 1,
-                    title: 'Rotary Charity/Commerce',
-                    src: 'rotary/rotary1.png',
-                    flex: 'xs12 sm6 md6 lg4',
-                    mini_desc: 'The Dutch Rotary Club came up with the plan to sell christmas trees for a good cause. I helped them by designing an attractive website, where the trees can be pre-ordered.',
-                    height:'200px',
-                    show: false,
-                    links: [
-                         {
-                            link: "rotary.nimdevelopment.com",
-                            tooltip: "View live project",
-                            color: "red mb-1",
-                            icon: "web"
-                        }
-                    ]
-                },
-                {
-                    id: 2,
-                    title: 'Promotional Page 1',
-                    src: 'nim-webshop/nim-webshop.png',
-                    flex: 'xs12 sm6 md6 lg4',
-                    mini_desc: 'A simple frontend page without any backend logics.',
-                    height:'200px',
-                    show: false,
-                    links: [
-                        {
-                            link: "project1.nimdevelopment.com/",
-                            tooltip: "View live project",
-                            color: "red mb-1",
-                            icon: "web"
-                        }
-                    ]
-                },
-                {
-                    id: 3,
-                    title: 'Promotional Page 2',
-                    src: 'barber/barber1.png',
-                    flex: 'xs12 sm6 md6 lg4',
-                    mini_desc: 'A simple frontend page without any backend logics.',
-                    height:'200px',
-                    show: false,
-                    links: [
-                         {
-                            link: "project3.nimdevelopment.com/",
-                            tooltip: "View live project",
-                            color: "red mb-1",
-                            icon: "web"
-                        }
-                    ]
-                },
-                {
-                    id: 4,
-                    title: 'Delivery Service Backend',
-                    src: 'delivery-backend/delivery-backend2.png',
-                    flex: 'xs12 sm6 md6 lg4',
-                    mini_desc: 'This is a fully function admin panel for managing categories, products, store settings, images, push messages and much more. The dashboard serves all data as an API.',
-                    height:'200px',
-                    show: false,
-                    links: [
-                         {
-                            link: "dashboard.nimdelivery.com",
-                            tooltip: "View live project",
-                            color: "red mb-1",
-                            icon: "web"
-                        }
-                    ]
-                },
-                {
-                    id: 5,
-                    title: 'Saas Front Office',
-                    src: 'delivery-front-office/delivery-front-office1.png',
-                    flex: 'xs12 sm6 md6 lg4',
-                    mini_desc: 'A simple front office website for Saas.',
-                    height:'200px',
-                    show: false,
-                    links: [
-                         {
-                            link: "nimdelivery.com",
-                            tooltip: "View live project",
-                            color: "red mb-1",
-                            icon: "web"
-                        }
-                    ]
-                },
-                {
-                    id: 6,
-                    title: 'SPA - Project Manager',
-                    src: 'spa-project-manager/spa-project-manager1.png',
-                    flex: 'xs12 sm6 md6 lg4',
-                    mini_desc: 'This is a Laravel/VueJs single page application that I have developed for practicing purposes. My main focuss was on familiarizing myself with the Vuetify library and general VueJs templating.',
-                    height:'200px',
-                    show: false,
-                    links: [
-                         {
-                            link: "....",
-                            tooltip: "View live project",
-                            color: "red mb-1",
-                            icon: "web"
-                        },
-                        {
-                            link: "https://github.com/Nim-Development/laravel-vue-spa",
-                            tooltip: "View code",
-                            color: "indigo mb-1",
-                            icon: "code"
-                        }
-                    ]
-                }
-            ],
+            // projects: [
+            //     {
+            //         id: 0,
+            //         title: 'Food E-Commerce Website',
+            //         src: 'petit-pain/petit-pain1.png',
+            //         flex: 'xs12 sm12 md12 lg12',
+            //         desc: 'Petit Pain is a busy food company who was looking for ways to expand their business. I was hired to create an webpage on which their customers can easily place orders.',
+            //         height:'300px',
+            //         show: false,
+            //         links: [
+            //              {
+            //                 link: "winkel.petitpain.nl",
+            //                 tooltip: "View live project",
+            //                 color: "red mb-1",
+            //                 icon: "web"
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         id: 1,
+            //         title: 'Rotary Charity/Commerce',
+            //         src: 'rotary/rotary1.png',
+            //         flex: 'xs12 sm6 md6 lg4',
+            //         mini_desc: 'The Dutch Rotary Club came up with the plan to sell christmas trees for a good cause. I helped them by designing an attractive website, where the trees can be pre-ordered.',
+            //         height:'200px',
+            //         show: false,
+            //         links: [
+            //              {
+            //                 link: "rotary.nimdevelopment.com",
+            //                 tooltip: "View live project",
+            //                 color: "red mb-1",
+            //                 icon: "web"
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         id: 2,
+            //         title: 'Promotional Page 1',
+            //         src: 'nim-webshop/nim-webshop.png',
+            //         flex: 'xs12 sm6 md6 lg4',
+            //         mini_desc: 'A simple frontend page without any backend logics.',
+            //         height:'200px',
+            //         show: false,
+            //         links: [
+            //             {
+            //                 link: "project1.nimdevelopment.com/",
+            //                 tooltip: "View live project",
+            //                 color: "red mb-1",
+            //                 icon: "web"
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         id: 3,
+            //         title: 'Promotional Page 2',
+            //         src: 'barber/barber1.png',
+            //         flex: 'xs12 sm6 md6 lg4',
+            //         mini_desc: 'A simple frontend page without any backend logics.',
+            //         height:'200px',
+            //         show: false,
+            //         links: [
+            //              {
+            //                 link: "project3.nimdevelopment.com/",
+            //                 tooltip: "View live project",
+            //                 color: "red mb-1",
+            //                 icon: "web"
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         id: 4,
+            //         title: 'Delivery Service Backend',
+            //         src: 'delivery-backend/delivery-backend2.png',
+            //         flex: 'xs12 sm6 md6 lg4',
+            //         mini_desc: 'This is a fully function admin panel for managing categories, products, store settings, images, push messages and much more. The dashboard serves all data as an API.',
+            //         height:'200px',
+            //         show: false,
+            //         links: [
+            //              {
+            //                 link: "dashboard.nimdelivery.com",
+            //                 tooltip: "View live project",
+            //                 color: "red mb-1",
+            //                 icon: "web"
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         id: 5,
+            //         title: 'Saas Front Office',
+            //         src: 'delivery-front-office/delivery-front-office1.png',
+            //         flex: 'xs12 sm6 md6 lg4',
+            //         mini_desc: 'A simple front office website for Saas.',
+            //         height:'200px',
+            //         show: false,
+            //         links: [
+            //              {
+            //                 link: "nimdelivery.com",
+            //                 tooltip: "View live project",
+            //                 color: "red mb-1",
+            //                 icon: "web"
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         id: 6,
+            //         title: 'SPA - Project Manager',
+            //         src: 'spa-project-manager/spa-project-manager1.png',
+            //         flex: 'xs12 sm6 md6 lg4',
+            //         mini_desc: 'This is a Laravel/VueJs single page application that I have developed for practicing purposes. My main focuss was on familiarizing myself with the Vuetify library and general VueJs templating.',
+            //         height:'200px',
+            //         show: false,
+            //         links: [
+            //              {
+            //                 link: "....",
+            //                 tooltip: "View live project",
+            //                 color: "red mb-1",
+            //                 icon: "web"
+            //             },
+            //             {
+            //                 link: "https://github.com/Nim-Development/laravel-vue-spa",
+            //                 tooltip: "View code",
+            //                 color: "indigo mb-1",
+            //                 icon: "code"
+            //             }
+            //         ]
+            //     }
+            // ],
+            projects: [{}],
             packages: [
                 {
                     title: 'Package - Contact Form',
@@ -260,6 +263,23 @@ export default {
                 }
             ]
         }
+    },
+    mounted(){
+        // Grab all projects
+        axios.get(`${api_base}/api/projects`)
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+        // axios
+        //     .get('http://project6.nimdevelopment.com/api/projects')
+        //     .then(response => 
+        //         console.log('henk') )
+        //         //console.log(response)/*this.projects = response.data*/)
+        //     .catch(error => console.log(error));
     },
     computed: {
         tooltip_show() {
