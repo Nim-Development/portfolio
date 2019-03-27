@@ -68,7 +68,7 @@
 
             <v-list-tile-content>
               <v-list-tile-title>{{ contact.email.content }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ contact.phone.sub }}</v-list-tile-sub-title>
+              <v-list-tile-sub-title>{{ contact.email.sub }}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
 
@@ -154,7 +154,7 @@ export default {
           document.location.href = `tel:${this.contact.phone.nr}`;
         },
         mail(){
-          window.location.href = "mailto:mail@example.org";
+          window.location.href = `mailto:${contact.email.content}`;
         }
     },
     computed: {
