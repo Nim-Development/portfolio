@@ -56,7 +56,7 @@
         <!-- Sidenav -->
         <v-navigation-drawer 
             app 
-            v-model="darwer_collapse"
+            :value="drawer_collapse"
             stateless
             mini-variant
             class="grey darken-2"
@@ -127,7 +127,7 @@ export default {
         }
     },
     computed: {
-        darwer_collapse(){
+        drawer_collapse(){
             if(this.$vuetify.breakpoint.name == 'xs'){
                 return false;
             }

@@ -37,7 +37,7 @@
             </v-tooltip>      
 
             <v-tooltip 
-            v-for="(link, index) in links"
+            v-for="(link, index) in filtered_links"
             :key="index"
             left :value="tooltip_show">
             <template v-slot:activator="{ on }">
@@ -48,7 +48,7 @@
                     :color="link.color"
                     v-on="on"
                     target="_blank"
-                    :href="`http://${link.link}`"
+                    :href="`${link.link}`"
                 >
                     <v-icon>{{ link.icon }}</v-icon>
                 </v-btn>
@@ -80,6 +80,9 @@ export default {
                 case 'xs': return false;
                 default: return true;
             }
+        },
+        filtered_links(){
+            return this.links.filter(link => link.link != '' );
         }
     }
 }

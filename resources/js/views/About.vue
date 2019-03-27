@@ -4,7 +4,7 @@
             <v-container
                 fluid
                 grid-list-md
-                class="mt-4"
+                class="mt-4 mb-5"
                 >
                 <v-layout row wrap :class="mx_size">
                     <v-flex class="xs12 sm8 lg8" >
