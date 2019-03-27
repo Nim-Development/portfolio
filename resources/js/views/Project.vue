@@ -60,7 +60,10 @@ export default {
     data(){
         return {
             id: null,
-            project: {},
+            project: {
+                images: [{}],
+                links: [{}]
+            },
             tabs: [
                 'web', 'shopping', 'videos', 'images', 'news'
             ],
@@ -70,6 +73,8 @@ export default {
         const app = this;
         app.id = this.$route.params.id;
         // Do a api get for single product
+                
+
                 
         // Grab all projects
         axios.get(`/api/project/${app.id}`)

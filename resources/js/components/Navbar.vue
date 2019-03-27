@@ -136,7 +136,7 @@ export default {
         },
         xs_darken(){
             if(this.$vuetify.breakpoint.name == 'xs'){
-                return "grey darken-2";
+                return "grey darken-1";
             }
             return '';
             

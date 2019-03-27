@@ -27,7 +27,7 @@
                               <p>{{ body_p1 }}</p>
                               <p>{{ body_p2 }}</p>
                             </v-card-text>
-                            <v-card-actions>
+                            <!-- <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn icon>
                                 <v-icon>favorite</v-icon>
@@ -38,33 +38,20 @@
                             <v-btn icon>
                                 <v-icon>share</v-icon>
                             </v-btn>
-                            </v-card-actions>
+                            </v-card-actions> -->
                         </v-card>
                     </v-flex>
                     <v-flex class="xs12 sm4 lg4" >
                         <v-card :class="card_spacer">
                             <v-list two-line>
-          <v-list-tile @click="">
+          <v-list-tile @click="dial">
             <v-list-tile-action>
-              <v-icon color="indigo">phone</v-icon>
+              <v-icon color="indigo">{{ contact.phone.icon }}</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>
-              <v-list-tile-title>(650) 555-1234</v-list-tile-title>
-              <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
-            </v-list-tile-content>
-
-            <v-list-tile-action>
-              <v-icon>chat</v-icon>
-            </v-list-tile-action>
-          </v-list-tile>
-
-          <v-list-tile @click="">
-            <v-list-tile-action></v-list-tile-action>
-
-            <v-list-tile-content>
-              <v-list-tile-title>(323) 555-6789</v-list-tile-title>
-              <v-list-tile-sub-title>Work</v-list-tile-sub-title>
+              <v-list-tile-title>{{ contact.phone.content }}</v-list-tile-title>
+              <v-list-tile-sub-title>{{ contact.phone.sub }}</v-list-tile-sub-title>
             </v-list-tile-content>
 
             <v-list-tile-action>
@@ -74,36 +61,39 @@
 
           <v-divider inset></v-divider>
 
-          <v-list-tile @click="">
+          <v-list-tile @click="mail">
             <v-list-tile-action>
-              <v-icon color="indigo">mail</v-icon>
+              <v-icon color="indigo">{{ contact.email.icon }}</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>
-              <v-list-tile-title>aliconnors@example.com</v-list-tile-title>
-              <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-
-          <v-list-tile @click="">
-            <v-list-tile-action></v-list-tile-action>
-
-            <v-list-tile-content>
-              <v-list-tile-title>ali_connors@example.com</v-list-tile-title>
-              <v-list-tile-sub-title>Work</v-list-tile-sub-title>
+              <v-list-tile-title>{{ contact.email.content }}</v-list-tile-title>
+              <v-list-tile-sub-title>{{ contact.phone.sub }}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-divider inset></v-divider>
 
-          <v-list-tile @click="">
+          <v-list-tile @click="linkedin">
             <v-list-tile-action>
-              <v-icon color="indigo">location_on</v-icon>
+              <v-icon color="indigo">{{ contact.linkedin.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ contact.linkedin.content }}</v-list-tile-title>
+              <v-list-tile-sub-title>{{ contact.linkedin.sub }}</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-divider inset></v-divider>
+
+          <v-list-tile @click="address">
+            <v-list-tile-action>
+              <v-icon color="indigo">{{ contact.address.icon }}</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>
-              <v-list-tile-title>1400 Main Street</v-list-tile-title>
-              <v-list-tile-sub-title>Orlando, FL 79938</v-list-tile-sub-title>
+              <v-list-tile-title>{{ contact.address.content }}</v-list-tile-title>
+              <v-list-tile-sub-title>{{ contact.address.sub }}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
@@ -119,13 +109,52 @@ export default {
     name: 'About',
     data(){
         return {
+            //::nk make api from dashboard
             about: {
                 img_lg: 'about-view-lg.png',
                 img_md: 'about-view-md.png',
                 img_sm: 'about-view-sm.png',
             },
             body_p1: "A result oriented Laravel developer with +2 years experience in developing and maintaining web applications. I am self taught and became advanced by working in a dev team and by developing 5+ projects as a freelancer.",
-            body_p2: "I love laravel because it is a robust and complete framework. By investing lots of hours in this framework I became fast at writing laravel applications and I gained a deeper understanding of its underlying processes (like the service container). I am also comfortable at laravel package development."
+            body_p2: "I love laravel because it is a robust and complete framework. By investing lots of hours in this framework I became fast at writing laravel applications and I gained a deeper understanding of its underlying processes (like the service container). I am also comfortable at laravel package development.",
+            contact: {
+              phone: {
+                icon: 'phone',
+                content: '(+31) 6 363 49 028',
+                sub: 'Mobile',
+                nr: '+31636349028',
+              },
+              email: {
+                icon: 'mail',
+                content: 'nick@nimdevelopment.com',
+                sub: 'Work Mail',
+              },
+              linkedin: {
+                icon: 'group',
+                content: 'linkedin.com/in/nick-knierim-4a0759172',
+                sub: 'LinkedIn',
+              },
+              address: {
+                icon: 'location_on',
+                content: 'Zuidvliet 111',
+                sub: 'Maassluis, 3141AP',
+                maps_link: 'https://www.google.com/maps/place/Zuidvliet+111,+3141+AP+Maassluis/@51.9232074,4.2577421,17z/data=!3m1!4b1!4m5!3m4!1s0x47c44c987722e6af:0x45995bbd611241e3!8m2!3d51.9232041!4d4.2599254'
+              }
+            }
+        }
+    },
+    methods: {
+        linkedin(){
+          window.open(`https://${this.contact.linkedin.content}`);
+        },
+        address(){
+          window.open(this.contact.address.maps_link);
+        },
+        dial(){
+          document.location.href = `tel:${this.contact.phone.nr}`;
+        },
+        mail(){
+          window.location.href = "mailto:mail@example.org";
         }
     },
     computed: {
