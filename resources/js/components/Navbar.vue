@@ -14,7 +14,7 @@
                 >Close</v-btn>
         </v-snackbar>
 
-        <v-toolbar flat app scroll-off-screen>
+        <v-toolbar flat app scroll-off-screen :class="xs_darken">
             <v-toolbar-side-icon class="grey--text hidden-xs-only" @click="collapse_drawer">
             </v-toolbar-side-icon>
             <v-toolbar-title class="text-uppercase grey--text">
@@ -134,6 +134,13 @@ export default {
             if(this.drawer == false){return false;}
             if(this.drawer == true){return true;}
         },
+        xs_darken(){
+            if(this.$vuetify.breakpoint.name == 'xs'){
+                return "grey darken-2";
+            }
+            return '';
+            
+        }
     }
 }
 </script>

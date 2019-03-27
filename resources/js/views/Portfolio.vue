@@ -116,7 +116,7 @@ export default {
                 {
                     title: 'Package - form pre-compiler',
                     flex: 'xs6 sm4 md4 lg3',
-                    mini_desc: 'A package which allows you to pre-compile forms from your Controller.',
+                    mini_desc: 'A package which allows you to pre-compile fors from your Controller.',
                     show: false,
                     link: "https://github.com/Nim-Development/Laravel-FormBuilder",
                 },

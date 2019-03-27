@@ -21,10 +21,9 @@
                             ></v-img> -->
                             <v-carousel hide-delimiters height="100%">
                                 <v-carousel-item
-                                v-for="(item,i) in project.src"
+                                v-for="(image,i) in project.images"
                                 :key="i"
-                                
-                                :src="`/storage/img/projects/${item}`"
+                                :src="`https://project6.nimdevelopment.com/storage/upload/${image.name}`"
                                 ></v-carousel-item>
                             </v-carousel>
                             <v-card-actions >
@@ -39,11 +38,7 @@
                             </v-card-title> -->
                             <v-card-text>
                                 <p class="text--grey">
-                                    Lorem ipsum dolor. Fugit eveniet accusamus ducimus! Rerum!
-                                    Fugit deserunt suscipit deleniti beatae, voluptate dolor? Enim maxime dignissimos fugit accusantium reiciendis quidem eveniet accusamus ducimus! Rerum!
-                                </p>
-                                <p class="text--grey">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit deserunt omnis commodi accusantium a suscipit deleniti beatae, voluptate dolor? Enim maxime dignissimos fugit accusantium reiciendis quidem eveniet accusamus ducimus! Rerum!
+                                    {{ project.desc }}
                                 </p>
                             </v-card-text>
                         </v-card>      
@@ -66,20 +61,6 @@ export default {
         return {
             id: null,
             project: {},
-            images: [
-                {
-                    src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
-                },
-                {
-                    src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
-                },
-                {
-                    src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-                },
-                {
-                    src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
-                }
-            ],
             tabs: [
                 'web', 'shopping', 'videos', 'images', 'news'
             ],
@@ -93,8 +74,8 @@ export default {
         // Grab all projects
         axios.get(`/api/project/${app.id}`)
         .then(function (response) {
-            app.projects = response.data.data;
-            console.log(response.data.data[0].images);
+            app.project = response.data.data;
+            console.log(response.data.data);
 	    
         })
         .catch(function (error) {
