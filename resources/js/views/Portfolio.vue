@@ -8,7 +8,7 @@
                 >
                 <v-layout row wrap :class="mx_size">
                     <v-flex
-                    v-for="card in projects"
+                    v-for="card in projects_positioned"
                     :key="card.title"
                     :class="card.flex"
                     >
@@ -108,31 +108,17 @@ export default {
             packages: [
                 {
                     title: 'Package - Contact Form',
-                    flex: 'xs6 sm4 md4 lg3',
+                    flex: 'xs6 sm6 md6 lg6',
                     mini_desc: 'A package that includes a full contact form. The form submittions are automatically saved to the database and send out to the specified email address.',
                     show: false,
                     link: "https://github.com/Nim-Development/contact-package",
                 },
                 {
                     title: 'Package - form pre-compiler',
-                    flex: 'xs6 sm4 md4 lg3',
+                    flex: 'xs6 sm6 md6 lg6',
                     mini_desc: 'A package which allows you to pre-compile fors from your Controller.',
                     show: false,
                     link: "https://github.com/Nim-Development/Laravel-FormBuilder",
-                },
-                {
-                    title: 'Contact Form Package 3',
-                    flex: 'xs6 sm4 md4 lg3',
-                    mini_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nihil, quo incidunt molestias facere sint ducimus, adipisci necessitatibus atque.',
-                    show: false,
-                    link: null
-                },
-                {
-                    title: 'Contact Form Package 4',
-                    flex: 'xs6 sm4 md4 lg3',
-                    mini_desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nihil, quo incidunt molestias facere sint ducimus, adipisci necessitatibus atque.',
-                    show: false,
-                    link: null
                 }
             ]
         }
@@ -148,8 +134,14 @@ export default {
         .catch(function (error) {
             console.log(error);
         });
+        //console.log(projects_positioned);
     },
     computed: {
+        projects_positioned(){
+            return this.projects.sort(function(a,b){
+                return a.position - b.position;
+            });
+        },
         tooltip_show() {
             switch (this.$vuetify.breakpoint.name) {
                 case 'xs': return true;
