@@ -21,7 +21,7 @@
                             >
                                 <v-img
                                 @click="card.show = !card.show"
-                                :src="`${api_base}${card.src}`"
+                                :src="`project6.nimdevelopment.com/storage/public/${card.images[0].name}`"
                                 :height="card.height"
                                 :gradient="hover ? '' : gradient"
                                 >
@@ -102,7 +102,7 @@ export default {
     data() {
         return {
             show: false,
-            api_base: 'project6.nimdevelopment.com/',
+            //api_base: 'nimdevelopment.com/',
             gradient: 'to bottom right, rgba(250, 250, 250, .1), rgba(85,85,85,0.0)',
             // projects: [
             //     {
@@ -265,10 +265,12 @@ export default {
         }
     },
     mounted(){
+        const app = this;
         // Grab all projects
-        axios.get(`${api_base}/api/projects`)
+        axios.get(`/api/projects`)
         .then(function (response) {
-            console.log(response);
+            app.projects = response.data.data;
+            //console.log(response.data.data[0].images[0].name);
         })
         .catch(function (error) {
             console.log(error);
