@@ -154,7 +154,7 @@ export default {
           document.location.href = `tel:${this.contact.phone.nr}`;
         },
         mail(){
-          window.location.href = `mailto:${contact.email.content}`;
+          window.location.href = `mailto:nick@nimdevelopment.com`;
         }
     },
     computed: {
