@@ -107,18 +107,32 @@ export default {
             projects: [{}],
             packages: [
                 {
-                    title: 'Package - Contact Form',
-                    flex: 'xs6 sm6 md6 lg6',
-                    mini_desc: 'A package that includes a full contact form. The form submittions are automatically saved to the database and send out to the specified email address.',
+                    title: 'DBase',
+                    flex: 'xs6 sm6 md3 lg3',
+                    mini_desc: 'A GUI tool for making and migration database migrations.',
+                    show: false,
+                    link: "https://github.com/Nim-Development/laravel-dbase",
+                },
+                {
+                    title: 'Form pre-compiler',
+                    flex: 'xs6 sm6 md3 lg3',
+                    mini_desc: 'A package which allows you to pre-compile fors from your Controller.',
+                    show: false,
+                    link: "https://github.com/Nim-Development/Laravel-FormBuilder",
+                },
+                {
+                    title: 'Contact Form',
+                    flex: 'xs6 sm6 md3 lg3',
+                    mini_desc: 'A contact form package. (saves and sends emails)',
                     show: false,
                     link: "https://github.com/Nim-Development/contact-package",
                 },
                 {
-                    title: 'Package - form pre-compiler',
-                    flex: 'xs6 sm6 md6 lg6',
-                    mini_desc: 'A package which allows you to pre-compile fors from your Controller.',
+                    title: 'Coupons',
+                    flex: 'xs6 sm6 md3 lg3',
+                    mini_desc: 'Simple package for creating and applying coupons.',
                     show: false,
-                    link: "https://github.com/Nim-Development/Laravel-FormBuilder",
+                    link: "https://github.com/Nim-Development/Coupon",
                 }
             ]
         }
